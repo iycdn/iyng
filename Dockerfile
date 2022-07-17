@@ -1,9 +1,9 @@
 FROM debian:latest
-ADD ngx_cache_purge-2.3.tar.gz /ngx_cache_purge-2.3.tar.gz
-ADD zlib-1.2.12.tar.gz /zlib-1.2.12.tar.gz
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget git unzip screen gcc libpcre3-dev libssl-dev make -y
-RUN tar -zxvf ngx_cache_purge-2.3.tar.gz && \
+RUN wget https://github.com/iycdn/iyng/raw/main/ngx_cache_purge-2.3.tar.gz && \
+    tar -zxvf ngx_cache_purge-2.3.tar.gz && \
+    wget https://github.com/iycdn/iyng/raw/main/zlib-1.2.12.tar.gz && \
     tar -zxvf zlib-1.2.12.tar.gz && \
     wget https://nginx.org/download/nginx-1.22.0.tar.gz && \
     tar -zxvf nginx-1.22.0.tar.gz && \
