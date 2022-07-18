@@ -10,11 +10,10 @@ RUN cd /root && \
     tar -zxvf zlib-1.2.12.tar.gz && \
     tar -zxvf pcre-8.45.tar.gz && \
     git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module && \
-    git clone https://github.com/openresty/lua-nginx-module && \
     wget https://nginx.org/download/nginx-1.22.0.tar.gz && \
     tar -zxvf nginx-1.22.0.tar.gz && \
     cd nginx-1.22.0 && \
-    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_v2_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-pcre=../pcre-8.45 --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 --add-module=../ngx_http_substitutions_filter_module --add-module=../lua-nginx-module && \
+    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_v2_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-ngx_http_perl_module --with-pcre=../pcre-8.45 --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 --add-module=../ngx_http_substitutions_filter_module && \
     make && \
     make install && \
     useradd www && \
