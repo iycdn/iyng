@@ -1,7 +1,7 @@
 FROM debian:latest
+COPY ngx_cache_purge-2.3.tar.gz /root
+COPY zlib-1.2.12.tar.gz /root
 WORKDIR /root
-ADD ngx_cache_purge-2.3.tar.gz /root
-ADD zlib-1.2.12.tar.gz /root
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget git unzip screen gcc libpcre3-dev libssl-dev make -y
 RUN cd /root && \
