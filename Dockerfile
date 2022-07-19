@@ -12,7 +12,7 @@ RUN cd /root && \
     wget https://nginx.org/download/nginx-1.22.0.tar.gz && \
     tar -zxvf nginx-1.22.0.tar.gz && \
     cd nginx-1.22.0 && \
-    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-http_perl_module --http_sub_module --with-pcre=../pcre-8.45 --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 && \
+    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-http_perl_module --with-http_sub_module --with-pcre=../pcre-8.45 --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 && \
     make && \
     make install && \
     useradd www && \
