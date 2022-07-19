@@ -9,7 +9,7 @@ RUN cd /root && \
     tar -zxvf ngx_cache_purge-2.3.tar.gz && \
     tar -zxvf zlib-1.2.12.tar.gz && \
     tar -zxvf pcre-8.45.tar.gz && \
-    git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git && \
+    git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module.git && \
     wget https://nginx.org/download/nginx-1.22.0.tar.gz && \
     tar -zxvf nginx-1.22.0.tar.gz && \
     cd nginx-1.22.0 && \
