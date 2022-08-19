@@ -4,7 +4,7 @@ COPY zlib-1.2.12.tar.gz /root
 COPY pcre-8.45.tar.gz /root
 WORKDIR /root
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget git unzip screen gcc libpcre3-dev libssl-dev libpcre3 libperl-dev zlib1g-dev make build-essential -y
+RUN DEBIAN_FRONTEND=noninteractive apt install wget git unzip gcc libpcre3-dev libssl-dev libpcre3 zlib1g-dev zlib make build-essential -y
 RUN cd /root && \
     tar -zxvf ngx_cache_purge-2.3.tar.gz && \
     tar -zxvf zlib-1.2.12.tar.gz && \
@@ -13,7 +13,7 @@ RUN cd /root && \
     wget https://nginx.org/download/nginx-1.22.0.tar.gz && \
     tar -zxvf nginx-1.22.0.tar.gz && \
     cd nginx-1.22.0 && \
-    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-http_perl_module --with-http_sub_module --with-pcre=../pcre-8.45 --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 --add-module=../ngx_http_substitutions_filter_module && \
+    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-pcre=../pcre-8.45 --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 --add-module=../ngx_http_substitutions_filter_module && \
     make -j4 && \
     make install && \
     useradd www && \
