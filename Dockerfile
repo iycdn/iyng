@@ -21,10 +21,10 @@ RUN cd /root && \
          mkdir /var/log/nginx  && \
          mkdir -p /ngcache  && \
          chown -R www:www /ngcache
-RUN echo "* soft nproc 11000" >> /etc/security/limits.conf  && \
-         echo "* hard nproc 11000" >> /etc/security/limits.conf  && \
-         echo "* soft nofile 655350" >> /etc/security/limits.conf  && \
-         echo "* hard nofile 655350" >> /etc/security/limits.conf  && \
+RUN echo "soft nproc 11000" >> /etc/security/limits.conf  && \
+         echo "hard nproc 11000" >> /etc/security/limits.conf  && \
+         echo "soft nofile 655350" >> /etc/security/limits.conf  && \
+         echo "hard nofile 655350" >> /etc/security/limits.conf  && \
          echo "net.ipv4.ip_forward = 0" >> /etc/sysctl.conf  && \
          echo "net.ipv4.conf.default.rp_filter = 1" >> /etc/sysctl.conf  && \
          echo "net.ipv4.conf.default.accept_source_route = 0" >> /etc/sysctl.conf  && \
