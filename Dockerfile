@@ -21,9 +21,10 @@ RUN cd /root && \
     mkdir /var/log/nginx  && \
     mkdir -p /ngcache  && \
     chown -R www:www /ngcache
-RUN echo "net.core.default_qdisc=yh" >> /etc/sysctl.conf  && \
-    echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf  && \
-    sysctl -p  && \
+RUN echo "* soft nproc 11000" >> /etc/security/limits.conf && \
+    echo "* hard nproc 11000" >> /etc/security/limits.conf && \
+    echo "* soft nofile 655350" >> /etc/security/limits.conf && \
+    echo "* hard nofile 655350" >> /etc/security/limits.conf && \
     echo -e "系统优化成功！"
 ADD nginx.conf /usr/local/nginx/conf
 EXPOSE 80
