@@ -24,7 +24,7 @@ RUN cd /root && \
 RUN echo "net.core.default_qdisc=yh" >> /etc/sysctl.conf  && \
     echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf  && \
     sysctl -p  && \
-    echo -e "系统优化成功！"'
+    echo -e "系统优化成功！"
 ADD nginx.conf /usr/local/nginx/conf
 EXPOSE 80
 ENTRYPOINT [ "/usr/local/nginx/sbin/nginx", "-g", "daemon off;" ]
