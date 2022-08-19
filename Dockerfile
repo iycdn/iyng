@@ -4,7 +4,7 @@ COPY zlib-1.2.12.tar.gz /root
 COPY pcre-8.45.tar.gz /root
 WORKDIR /root
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install wget git unzip gcc libpcre3-dev libssl-dev libpcre3 zlib1g-dev zlib make build-essential -y
+RUN DEBIAN_FRONTEND=noninteractive apt install wget git unzip gcc libpcre3-dev libssl-dev libpcre3 zlib1g-dev make build-essential -y
 RUN cd /root && \
     tar -zxvf ngx_cache_purge-2.3.tar.gz && \
     tar -zxvf zlib-1.2.12.tar.gz && \
