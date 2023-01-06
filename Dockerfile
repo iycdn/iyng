@@ -14,7 +14,7 @@ RUN cd /root && \
     wget https://nginx.org/download/nginx-1.22.1.tar.gz && \
     tar -zxvf nginx-1.22.1.tar.gz && \
     cd nginx-1.22.1 && \
-    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-pcre=../pcre-8.45 --add-module=../ngx_cache_purge-2.3 --add-module=../ngx_http_substitutions_filter_module && \
+    ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_realip_module --with-http_ssl_module --with-http_gzip_static_module --with-pcre=../pcre-8.45  --with-zlib=../zlib-1.2.12 --add-module=../ngx_cache_purge-2.3 --add-module=../ngx_http_substitutions_filter_module && \
     make -j4 && \
     make install && \
     useradd www && \
